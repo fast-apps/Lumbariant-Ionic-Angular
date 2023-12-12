@@ -61,5 +61,8 @@
     "ts-node": "^8.3.0",
     "typescript": "~5.2.2"
   },
-  "description": "An Ionic project"
+  "description": "An Ionic project",
+  "volta": {
+    "node": "18.18.2"
+  }
 }
