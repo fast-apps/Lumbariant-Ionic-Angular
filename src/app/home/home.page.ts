@@ -1,14 +1,24 @@
 import { Component } from '@angular/core';
 import { IonHeader, IonToolbar, IonTitle, IonContent } from '@ionic/angular/standalone';
-import { ExploreContainerComponent } from '../explore-container/explore-container.component';
+// Register swiper Elements
+import { register } from 'swiper/element/bundle';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { DataService } from '../services/data.service';
+register();
 
 @Component({
-  selector: 'app-home',
-  templateUrl: 'home.page.html',
-  styleUrls: ['home.page.scss'],
   standalone: true,
-  imports: [IonHeader, IonToolbar, IonTitle, IonContent, ExploreContainerComponent],
+  selector: 'app-home',
+  styleUrl: 'home.page.scss',
+  templateUrl: 'home.page.html',
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
+  imports: [IonHeader, IonToolbar, IonTitle, IonContent],
 })
 export class HomePage {
-  constructor() {}
+  
+  source: any[] = [];
+
+  constructor(private dataService: DataService) {
+    this.source = this.dataService.getVideoList();
+  }
 }
