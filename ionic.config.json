@@ -1,0 +1,7 @@
+{
+  "name": "Lumbariant-Ionic-Angular",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
