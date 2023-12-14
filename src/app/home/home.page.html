@@ -3,52 +3,62 @@
     @for (item of this.source(); track $index) {
       <swiper-slide>
         
-        <ion-list class="ion-padding-top">
+        <ion-grid>
+          <ion-row>
+            <ion-col size="12" sizeSm="4">
+              <!-- Info list -->
+              <ion-list class="ion-padding-top">
 
-          <ion-list-header class="ion-text-uppercase">
-            <ion-text color="primary">{{ item.title }}</ion-text>
-          </ion-list-header>
+                <ion-list-header class="ion-text-uppercase">
+                  <ion-text color="primary">{{ item.title }}</ion-text>
+                </ion-list-header>
 
-          <ion-item>
-            <ion-text color="medium">
-              {{ item.summary }}
-            </ion-text>
-          </ion-item>
+                <ion-item>
+                  <ion-text color="medium">
+                    {{ item.summary }}
+                  </ion-text>
+                </ion-item>
 
-          <ion-item>
-            <ion-label>
-              <ion-text color="secondary">
-                Series:
-              </ion-text>
-            </ion-label>
-            <ion-badge color="secondary" slot="end">{{ item.sets }}</ion-badge>
-          </ion-item>
+                <ion-item>
+                  <ion-label>
+                    <ion-text color="secondary">
+                      Series:
+                    </ion-text>
+                  </ion-label>
+                  <ion-badge color="secondary" slot="end">{{ item.sets }}</ion-badge>
+                </ion-item>
 
-          <ion-item>
-            <ion-label>
-              <ion-text color="secondary">
-                Repeticiones:
-              </ion-text>
-            </ion-label>
-            <ion-badge color="secondary" slot="end">{{ item.repeats }}</ion-badge>
-          </ion-item>
-
-          <!-- move pic/s or video/s or slider -->
-          <swiper-container #swipermedia class="media" id="swipermedia" 
-            direction="horizontal" 
-            scrollbar="true"
-            slides-per-view="1">
-            @for (img of item.media; track $index) {
-              <swiper-slide>
-                <img [src]="img" />
-              </swiper-slide>
-            }
-          </swiper-container>
-
-          <ion-item>
-            <ion-text color="medium">Excercise {{ $index + 1 }} of {{ source().length }} -  Media ({{ item.media.length }} pics)</ion-text>
-          </ion-item>
-        </ion-list>
+                <ion-item>
+                  <ion-label>
+                    <ion-text color="secondary">
+                      Repeticiones:
+                    </ion-text>
+                  </ion-label>
+                  <ion-badge color="secondary" slot="end">{{ item.repeats }}</ion-badge>
+                </ion-item>
+              </ion-list>
+            </ion-col>
+            <ion-col size="12" sizeSm="8">
+              <!-- Media list: pic/s or video/s or slider -->
+              <ion-list>
+                <swiper-container #swipermedia class="media" id="swipermedia" 
+                  direction="horizontal" 
+                  scrollbar="true"
+                  slides-per-view="1">
+                  @for (img of item.media; track $index) {
+                    <swiper-slide>
+                      <img [src]="img" />
+                    </swiper-slide>
+                  }
+                </swiper-container>
+                <ion-item>
+                  <ion-text color="medium">Excercise {{ $index + 1 }} of {{ source().length }} -  Media ({{ item.media.length }} pics)</ion-text>
+                </ion-item>
+              </ion-list>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      
 
         <!-- slide right feed -->
         <app-feed 
