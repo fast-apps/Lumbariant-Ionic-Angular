@@ -13,8 +13,14 @@ import {AnimationOptions, LottieComponent} from 'ngx-lottie';
 export class FooterComponent implements OnInit {
   @ViewChild('animationImg', {static: true}) animationImg: ElementRef | undefined;
 
-  @Input() 
-  video: any;
+  @Input()
+  avatar: string = "https://avatars.githubusercontent.com/u/147490210?s=400&u=7197abe8d40e7c77dde30973d3475b0776d866f5&v=4";
+
+  @Input()
+  vinyl: string = "../assets/svg/vinyl.svg";
+
+  @Input()
+  marquee: string = "empty markee...";
 
   option: AnimationOptions = {
     path: './assets/animations/music-fly.json'
@@ -29,7 +35,6 @@ export class FooterComponent implements OnInit {
       .iterations(Infinity)
       .fromTo('transform', 'rotate(0deg)', 'rotate(360deg)');
     animation.play();
-
   }
 
 }

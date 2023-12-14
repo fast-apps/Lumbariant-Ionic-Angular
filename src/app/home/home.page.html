@@ -1,7 +1,8 @@
 <ion-content>
-  <swiper-container #swiper id="swiper" direction="vertical" slides-per-view="1">
-    @for (item of this.source; track $index) {
-      <swiper-slide navigation="true">
+  <swiper-container #swiper id="swiper" direction="vertical" slides-per-view="1" scrollbar="true">
+    @for (item of this.source(); track $index) {
+      <swiper-slide>
+        
         <ion-list class="ion-padding-top">
 
           <ion-list-header class="ion-text-uppercase">
@@ -10,9 +11,7 @@
 
           <ion-item>
             <ion-text color="medium">
-              <p>
-                {{ item.summary }}
-              </p>
+              {{ item.summary }}
             </ion-text>
           </ion-item>
 
@@ -22,7 +21,7 @@
                 Series:
               </ion-text>
             </ion-label>
-            <ion-text color="secondary">{{ item.sets }}</ion-text>
+            <ion-badge color="secondary" slot="end">{{ item.sets }}</ion-badge>
           </ion-item>
 
           <ion-item>
@@ -31,10 +30,8 @@
                 Repeticiones:
               </ion-text>
             </ion-label>
-            <ion-text color="secondary">{{ item.repeats }}</ion-text>
+            <ion-badge color="secondary" slot="end">{{ item.repeats }}</ion-badge>
           </ion-item>
-
-          <ion-item-divider></ion-item-divider>
 
           <!-- move pic/s or video/s or slider -->
           <swiper-container #swipermedia class="media" id="swipermedia" 
@@ -48,10 +45,8 @@
             }
           </swiper-container>
 
-          <ion-item-divider></ion-item-divider>
-
           <ion-item>
-            <ion-text color="medium">Excercise {{ $index + 1 }} of {{ source.length }} -  Media {{ item.media.length }} pics</ion-text>
+            <ion-text color="medium">Excercise {{ $index + 1 }} of {{ source().length }} -  Media ({{ item.media.length }} pics)</ion-text>
           </ion-item>
         </ion-list>
 
@@ -63,7 +58,7 @@
           [favorite]="item.favorite"></app-feed>
 
         <!-- slide bottom fotter-->
-        <app-footer [video]="item"></app-footer>
+        <app-footer marquee="Led Zeppelin: The song remains the same"></app-footer>
       </swiper-slide>
     }
   </swiper-container>

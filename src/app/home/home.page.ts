@@ -1,14 +1,18 @@
-import { Component } from '@angular/core';
-import { IonHeader, IonToolbar, IonTitle, IonContent, 
-         IonList, IonListHeader, IonLabel, IonItem, IonItemDivider } from '@ionic/angular/standalone';
-// Register swiper Elements
-import { register } from 'swiper/element/bundle';
+// Angular
+import { ChangeDetectionStrategy, Component, WritableSignal, signal } from '@angular/core';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+// Ionic
+import { IonHeader, IonToolbar, IonTitle, IonContent, IonBadge,
+         IonList, IonListHeader, IonLabel, IonItem, IonItemDivider,
+         IonGrid, IonCol, IonRow } from '@ionic/angular/standalone';
+// Swiper Elements (needs CUSTOM_ELEMENTS_SCHEMA)
+import { register } from 'swiper/element/bundle';
 register();
-// App Resources
-import { DataService } from '../services/data.service';
+// Custom Components
 import { FeedComponent } from '../components/feed/feed.component';
 import { FooterComponent } from '../components/footer/footer.component';
+// Services
+import { DataService } from '../services/data.service';
 
 @Component({
   standalone: true,
@@ -17,16 +21,18 @@ import { FooterComponent } from '../components/footer/footer.component';
   templateUrl: 'home.page.html',
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   imports: [
-    IonHeader, IonToolbar, IonTitle, IonContent, 
-    IonList, IonListHeader, IonLabel, IonItem, IonItemDivider,
+    IonHeader, IonToolbar, IonTitle, IonContent, IonBadge,
+    IonList, IonListHeader, IonItem, IonLabel, IonItemDivider,
+    IonGrid, IonCol, IonRow,
     FeedComponent, FooterComponent
   ],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HomePage {
-  
-  source: any[] = [];
+
+  source: WritableSignal<any[]> = signal([]);
 
   constructor(private dataService: DataService) {
-    this.source = this.dataService.getVideoList();
+    this.source.set(this.dataService.getVideoList());
   }
 }

@@ -1,14 +1,9 @@
 <div class="footer">
-  <h2>{{ video.userName }}</h2>
+  <div class="music-icon ion-text-left"></div>
+  <marquee>{{ marquee }}</marquee>
   <div>
-    <img class="vinyl" src="../assets/svg/vinyl.svg" />
-    <img class="avatar" #animationImg src="https://avatars.githubusercontent.com/u/147490210?s=400&u=7197abe8d40e7c77dde30973d3475b0776d866f5&v=4" width="30px" height="30px"/>
+    <img [src]="vinyl" class="vinyl"/>
+    <img [src]="avatar" class="avatar" #animationImg width="30px" height="30px" />
     <ng-lottie [options]="option"></ng-lottie>
   </div>
-  <div>
-    <marquee behavior="" direction="">Cloned with ionic framework</marquee>
-  </div>
-  <a class="ion-text-left">
-    <div class="music-icon"></div>
-  </a>
 </div>
