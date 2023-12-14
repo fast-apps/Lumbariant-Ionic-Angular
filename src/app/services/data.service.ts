@@ -21,7 +21,7 @@ export class DataService {
                 likes: '34',
                 dislikes: "5",
                 comments: '40',
-                favorite: true,
+                favorite: false,
                 media: [
                     'assets/estiramientos/1-estiramiento-lumbosacro-suelo-img01.png',
                     'assets/estiramientos/1-estiramiento-lumbosacro-suelo-img02.png'
@@ -37,7 +37,7 @@ export class DataService {
                 likes: '344',
                 dislikes: "5",
                 comments: '40',
-                favorite: false,
+                favorite: true,
                 media: [
                     'assets/estiramientos/2-estiramiento-lumbosacro-silla-img01.png'
                 ],
@@ -52,7 +52,7 @@ export class DataService {
                 likes: '344',
                 dislikes: "5",
                 comments: '40',
-                favorite: true,
+                favorite: false,
                 media: [
                     'assets/estiramientos/3-estiramiento-lumbosacro-tumbado-img01.png',
                     'assets/estiramientos/3-estiramiento-lumbosacro-tumbado-img02.png'
@@ -68,7 +68,7 @@ export class DataService {
                 likes: '50',
                 dislikes: "5",
                 comments: '40',
-                favorite: true,
+                favorite: false,
                 media: [
                     'assets/estiramientos/4-gato-camello-img01.png',
                     'assets/estiramientos/4-gato-camello-img02.png'
@@ -99,7 +99,7 @@ export class DataService {
                 likes: '15',
                 dislikes: "5",
                 comments: '40',
-                favorite: true,
+                favorite: false,
                 media: [
                     'assets/estiramientos/6-estiramiento-piramidal-img01.png'
                 ],            
@@ -114,7 +114,7 @@ export class DataService {
                 likes: '15',
                 dislikes: "5",
                 comments: '40',
-                favorite: true,
+                favorite: false,
                 media: [
                     'assets/estiramientos/7-estiramiento-de-isuiotibiales-img01.png'
                 ],          
@@ -129,7 +129,7 @@ export class DataService {
                 likes: '15',
                 dislikes: "5",
                 comments: '40',
-                favorite: true,
+                favorite: false,
                 media: [
                     'assets/estiramientos/8-estiramiento-de-isuiotibiales-tumbado-img01.png',
                     'assets/estiramientos/8-estiramiento-de-isuiotibiales-tumbado-img02.png'
