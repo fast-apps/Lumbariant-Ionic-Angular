@@ -3,8 +3,11 @@ import { IonHeader, IonToolbar, IonTitle, IonContent } from '@ionic/angular/stan
 // Register swiper Elements
 import { register } from 'swiper/element/bundle';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-import { DataService } from '../services/data.service';
 register();
+// App Resources
+import { DataService } from '../services/data.service';
+import { FeedComponent } from '../components/feed/feed.component';
+import { FooterComponent } from '../components/footer/footer.component';
 
 @Component({
   standalone: true,
@@ -12,7 +15,14 @@ register();
   styleUrl: 'home.page.scss',
   templateUrl: 'home.page.html',
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
-  imports: [IonHeader, IonToolbar, IonTitle, IonContent],
+  imports: [
+    IonHeader, 
+    IonToolbar, 
+    IonTitle, 
+    IonContent, 
+    FeedComponent, 
+    FooterComponent
+  ],
 })
 export class HomePage {
   

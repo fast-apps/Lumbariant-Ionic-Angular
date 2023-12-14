@@ -6,65 +6,110 @@ import {Injectable} from '@angular/core';
 export class DataService {
 
     constructor() {
+
     }
 
     getVideoList() {
         const videoList = [
             {
                 userName: 'fakun',
+                title: "Estiramiento lumbosacro en suelo",
+                summary: "Flexionar las rodillas y las caderas hasta sentarse sobre los talones, flexionando a la vez el cuello. Deslizar las manos hacia delante al finalizar el movimiento. Mantener 10-30 segundos y volver a la posición inicial.",
+                series: "1",
+                repeticiones: "4",
                 likes: '344',
                 comments: '40',
-                url: 'assets/estiramientos/1-estiramiento-lumbosacro-suelo-md.png',
-                userPic: 'assets/estiramientos/1-estiramiento-lumbosacro-suelo-md.png',
+                userPics: [
+                    'assets/estiramientos/1-estiramiento-lumbosacro-suelo-img01.png',
+                    'assets/estiramientos/1-estiramiento-lumbosacro-suelo-img02.png'
+                ],
             },
             {
                 userName: 'fakun',
-                likes: '18.5k',
-                comments: '4323',
-                url: 'assets/estiramientos/2-estiramiento-lumbosacro-silla-md.png',
-                userPic: 'assets/estiramientos/2-estiramiento-lumbosacro-silla-md.png',            
+                title: "Estiramiento lumbosacro en silla",
+                summary: "Flexionar el cuello y el tronco, llevando las manos a los pies. Mantener 10-30 segundos y volver a la posición inicial.",
+                series: "1",
+                repeticiones: "4",
+                likes: '344',
+                comments: '40',
+                userPics: [
+                    'assets/estiramientos/2-estiramiento-lumbosacro-silla-img01.png'
+                ],
             },
             {
                 userName: 'fakun',
-                likes: '18.5k',
-                comments: '4323',
-                url: 'assets/estiramientos/3-estiramiento-lumbosacro-tumbado-md.png',
-                userPic: 'assets/estiramientos/3-estiramiento-lumbosacro-tumbado-md.png',            
+                title: "Estiramiento lumbosacro tumbado",
+                summary: "Flexionar de forma simultánea la cadera y de rodilla de ambas piernas. Empujar la parte superior de las piernas hacia el pecho. Mantener la posición 15-30 segundos y volver a la posición inicial.",
+                series: "1",
+                repeticiones: "4",
+                likes: '344',
+                comments: '40',
+                userPics: [
+                    'assets/estiramientos/3-estiramiento-lumbosacro-tumbado-img01.png',
+                    'assets/estiramientos/3-estiramiento-lumbosacro-tumbado-img02.png'
+                ],
             },
             {
                 userName: 'fakun',
-                likes: '18.5k',
-                comments: '4323',
-                url: 'assets/estiramientos/4-gato-camello-md.png',
-                userPic: 'assets/estiramientos/4-gato-camello-md.png',            
+                title: "Gato-camello",
+                summary: "Arquear la columna hacia arriba, flexionando el cuello. Mantener 5 segundos. Arquear la columna hacia abajo, extendiendo el cuello. Mantener 5 segundos.",
+                series: "1",
+                repeticiones: "5",
+                likes: '50',
+                comments: '4',
+                userPics: [
+                    'assets/estiramientos/4-gato-camello-img01.png',
+                    'assets/estiramientos/4-gato-camello-img02.png'
+                ],          
             },
             {
                 userName: 'fakun',
-                likes: '18.5k',
-                comments: '4323',
-                url: 'assets/estiramientos/5-estiramiento-de-psoas-md.png',
-                userPic: 'assets/estiramientos/5-estiramiento-de-psoas-md.png',            
+                title: "Estiramiento de psoas",
+                summary: "Empujar la pierna que está doblada manteniendo la otra estirada. Mantener 10-30 segundos y volver la posición inicial. Repetir con la otra pierna.",
+                series: "1",
+                repeticiones: "4",
+                likes: '15',
+                comments: '4',
+                userPics: [
+                    'assets/estiramientos/5-estiramiento-de-psoas-img01.png'
+                ],           
             },
             {
                 userName: 'fakun',
-                likes: '18.5k',
-                comments: '4323',
-                url: 'assets/estiramientos/6-estiramiento-piramidal-md.png',
-                userPic: 'assets/estiramientos/6-estiramiento-piramidal-md.png',            
+                title: "Estiramiento de piramidal",
+                summary: "Empujar la rodilla hacia el hombro contrario y el pie hacia atrás. Mantener 10-30 segundos y volver a la posición inicial. Repetir con la otra pierna.",
+                series: "1",
+                repeticiones: "4",
+                likes: '15',
+                comments: '4',
+                userPics: [
+                    'assets/estiramientos/6-estiramiento-piramidal-img01.png'
+                ],            
             },
             {
                 userName: 'fakun',
-                likes: '18.5k',
-                comments: '4323',
-                url: 'assets/estiramientos/7-estiramiento-de-isuiotibiales-md.png',
-                userPic: 'assets/estiramientos/7-estiramiento-de-isuiotibiales-md.png',            
+                title: "Estiramiento de isquiotibiales",
+                summary: "Inclinar el cuerpo hacia delante manteniendo la columna lumbar recta. Mantenerl 0-30 segundos y volver a la posición inicial. Repetir con la otra pierna.",
+                series: "1",
+                repeticiones: "4",
+                likes: '15',
+                comments: '4',
+                userPics: [
+                    'assets/estiramientos/7-estiramiento-de-isuiotibiales-img01.png'
+                ],          
             },
             {
                 userName: 'fakun',
-                likes: '18.5k',
-                comments: '4323',
-                url: 'assets/estiramientos/8-estiramiento-de-isuiotibiales-tumbado-md.png',
-                userPic: 'assets/estiramientos/8-estiramiento-de-isuiotibiales-tumbado-md.png',            
+                title: "Estiramiento de isquiotibiales tumbado",
+                summary: "Flexionar una cadera y mantener el muslo elevado en esta posición. Extender la rodilla 10 máximo posible. Mantener la posición 15-30 segundos y volver a la posición.",
+                series: "1",
+                repeticiones: "4",
+                likes: '15',
+                comments: '4',
+                userPics: [
+                    'assets/estiramientos/8-estiramiento-de-isuiotibiales-tumbado-img01.png',
+                    'assets/estiramientos/8-estiramiento-de-isuiotibiales-tumbado-img02.png'
+                ],
             }
         ];
 

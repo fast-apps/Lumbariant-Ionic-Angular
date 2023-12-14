@@ -1,6 +1,11 @@
-import {Component, Input, OnInit} from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+
+// Ion-Icons es standalone components
 import { IonIcon } from '@ionic/angular/standalone';
-import {AnimationOptions} from 'ngx-lottie';
+import { addIcons } from 'ionicons';
+import { logoIonic } from 'ionicons/icons';
+
+import { AnimationOptions } from 'ngx-lottie';
 
 @Component({
   standalone: true,
@@ -17,6 +22,13 @@ export class FeedComponent implements OnInit {
   };
 
   constructor() {
+     /**
+     * On Ionicons 7.2+ this icon
+     * gets mapped to a "logo-ionic" key.
+     * Alternatively, developers can do:
+     * addIcons({ 'logo-ionic': logoIonic });
+     */
+     addIcons({ logoIonic });
   }
 
   ngOnInit() {

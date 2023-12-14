@@ -5,11 +5,8 @@ ion-toolbar {
   }
 
   ion-title {
-    color: #000;
-  
-    ion-text {
-      opacity: 0.2;
-    }
+    color: #e9dfdf73;
+
   }
 
   ion-content {
@@ -24,15 +21,19 @@ ion-toolbar {
     z-index: -10;
   
     swiper-slide {
-      video {
-        object-fit: cover;
-        width: 100%;
-        height: 100%;
+      .explanation{
+        width: 100vw;
+        height: 30vh;
       }
-      img {
-        object-fit:fill;
-        width: 100%;
-        height: 100%;
-      }
+      .media {
+        width: 100vw;
+       
+        video {
+          object-fit: fill;
+          
+ 
+        }        
+        
+      }      
     }
   }
