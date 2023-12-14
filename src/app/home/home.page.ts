@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { IonHeader, IonToolbar, IonTitle, IonContent } from '@ionic/angular/standalone';
+import { IonHeader, IonToolbar, IonTitle, IonContent, 
+         IonList, IonListHeader, IonLabel, IonItem, IonItemDivider } from '@ionic/angular/standalone';
 // Register swiper Elements
 import { register } from 'swiper/element/bundle';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
@@ -16,12 +17,9 @@ import { FooterComponent } from '../components/footer/footer.component';
   templateUrl: 'home.page.html',
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   imports: [
-    IonHeader, 
-    IonToolbar, 
-    IonTitle, 
-    IonContent, 
-    FeedComponent, 
-    FooterComponent
+    IonHeader, IonToolbar, IonTitle, IonContent, 
+    IonList, IonListHeader, IonLabel, IonItem, IonItemDivider,
+    FeedComponent, FooterComponent
   ],
 })
 export class HomePage {

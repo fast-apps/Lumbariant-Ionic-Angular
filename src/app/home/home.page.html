@@ -1,17 +1,16 @@
 <ion-content>
-
   <swiper-container #swiper 
     id="swiper" 
     direction="vertical"
     slides-per-view="1">
     @for (item of this.source; track $index) {
-      <swiper-slide [id]="$index" [attr.data-index]="$index">        
-        <ion-list>
-          <ion-list-header>
-            <ion-label>{{ item.title }}</ion-label>
+      <swiper-slide [id]="$index" [attr.data-index]="$index" navigation="true">        
+        <ion-list class="ion-padding-top">
+          <ion-list-header class="ion-text-uppercase">
+            {{ item.title }}
           </ion-list-header>
           <ion-item>
-            <ion-text color="medium">{{ item.summary }}</ion-text>
+            <ion-text color="medium"><p>{{ item.summary }}</p></ion-text>
           </ion-item>
           <ion-item>
             <ion-label>Series:</ion-label>  {{ item.series }}
@@ -19,20 +18,24 @@
           <ion-item>
             <ion-label>Repeticiones:</ion-label>{{ item.repeticiones }}
           </ion-item>
+          <ion-item-divider></ion-item-divider>
+          <!-- move pic/s or video/s or slider -->        
+            <swiper-container #swipermedia class="media"
+              id="swipermedia" 
+              direction="horizontal" 
+              scrollbar="true" 
+              slides-per-view="1">
+              @for (img of item.userPics; track $index) {
+                <swiper-slide>
+                  <img [src]="img"/>
+                </swiper-slide>
+              }
+            </swiper-container>  
+            <ion-item-divider></ion-item-divider>
+            <ion-item>
+              <ion-text color="medium">Total Pictures: {{ item.userPics.length }}</ion-text>
+            </ion-item> 
         </ion-list>
-        <ion-divider></ion-divider>
-        <!-- move pic/s or video/s or slider -->        
-          <swiper-container #swipermedia class="media"
-            id="swipermedia" 
-            direction="horizontal" 
-            scrollbar="true" 
-            slides-per-view="1">
-            @for (img of item.userPics; track $index) {
-              <swiper-slide>
-                <img [src]="img"/>
-              </swiper-slide>
-            }
-          </swiper-container>        
         <!-- slide right feed -->
         <app-feed [video]="item"></app-feed>
         <!-- slide bottom fotter-->
@@ -40,5 +43,4 @@
       </swiper-slide>
     }
   </swiper-container>
-
 </ion-content>
