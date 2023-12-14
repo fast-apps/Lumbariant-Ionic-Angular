@@ -1,9 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
-
 // Ion-Icons es standalone components
-import { IonIcon } from '@ionic/angular/standalone';
+import { IonIcon, IonText, IonButton } from '@ionic/angular/standalone';
 import { addIcons } from 'ionicons';
-import { logoIonic } from 'ionicons/icons';
+import { thumbsUpOutline, thumbsDownOutline, chatbubbleEllipsesOutline, heart, heartOutline } from 'ionicons/icons';
 
 import { AnimationOptions } from 'ngx-lottie';
 
@@ -12,10 +11,23 @@ import { AnimationOptions } from 'ngx-lottie';
   selector: 'app-feed',
   styleUrl: './feed.component.scss',
   templateUrl: './feed.component.html',
-  imports:[IonIcon]
+  imports:[IonIcon, IonText, IonButton]
 })
 export class FeedComponent implements OnInit {
-  @Input() video: any;
+
+  themeColor: string = 'tertiary';
+
+  @Input() 
+  likes: string = "";
+
+  @Input()
+  dislikes: string = "";
+
+  @Input()
+  comments: string = "";
+
+  @Input()
+  favorite: boolean = false;
 
   option: AnimationOptions = {
     path: './assets/animations/music.json'
@@ -23,12 +35,16 @@ export class FeedComponent implements OnInit {
 
   constructor() {
      /**
-     * On Ionicons 7.2+ this icon
-     * gets mapped to a "logo-ionic" key.
-     * Alternatively, developers can do:
+     * On Ionicons 7.2+ this icon must to gets mapped to "string-name" key:
      * addIcons({ 'logo-ionic': logoIonic });
      */
-     addIcons({ logoIonic });
+     addIcons({
+      'heart-on': heart, 
+      'heart-off': heartOutline, 
+      'thumbs-up': thumbsUpOutline, 
+      'thumbs-down': thumbsDownOutline,
+      'chat-bubble': chatbubbleEllipsesOutline
+     });
   }
 
   ngOnInit() {

@@ -1,15 +1,28 @@
 <div class="actions">
   <div>
-    <ion-icon  size="large" name="logo-ionic"></ion-icon>
-    <p>{{video.likes}}</p>
+    <ion-icon size="small" name="thumbs-up" [color]="themeColor"></ion-icon>
+    <p class="ion-text-center">
+      <ion-text [color]="themeColor">{{ likes }}</ion-text>
+    </p>
   </div>
   <div>
-    <ion-icon size="large" src="../assets/svg/comment.svg">></ion-icon>
-    <p>{{video.comments}}</p>
+    <ion-icon  size="large" name="thumbs-down" [color]="themeColor"></ion-icon>
+    <p class="ion-text-center">
+      <ion-text [color]="themeColor">{{ dislikes }}</ion-text>
+    </p>
   </div>
   <div>
-    <ion-icon size="large" src="../assets/svg/share.svg">></ion-icon>
-    <p>Share</p>
+    <ion-icon size="large" name="chat-bubble" [color]="themeColor"></ion-icon>
+    <p class="ion-text-center">
+      <ion-text [color]="themeColor">{{ comments }}</ion-text>
+    </p>
+  </div>
+  <div>
+    @if (favorite) {
+      <ion-icon size="large" name="heart-on" [color]="themeColor"></ion-icon>
+    } @else {
+      <ion-icon size="large" name="heart-off" [color]="themeColor"></ion-icon>
+    }
   </div>
 </div>
 
