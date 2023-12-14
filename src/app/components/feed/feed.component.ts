@@ -15,7 +15,7 @@ import { AnimationOptions } from 'ngx-lottie';
 })
 export class FeedComponent implements OnInit {
 
-  themeColor: string = 'tertiary';
+  themeColor: string = 'secondary';
 
   @Input() 
   likes: string = "";

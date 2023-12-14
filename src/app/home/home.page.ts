@@ -3,7 +3,7 @@ import { ChangeDetectionStrategy, Component, WritableSignal, signal } from '@ang
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 // Ionic
 import { IonHeader, IonToolbar, IonTitle, IonContent, IonBadge,
-         IonList, IonListHeader, IonLabel, IonItem, IonItemDivider,
+         IonList, IonListHeader, IonLabel, IonItem, IonItemDivider, IonNote,
          IonGrid, IonCol, IonRow } from '@ionic/angular/standalone';
 // Swiper Elements (needs CUSTOM_ELEMENTS_SCHEMA)
 import { register } from 'swiper/element/bundle';
@@ -23,7 +23,7 @@ import { DataService } from '../services/data.service';
   imports: [
     IonHeader, IonToolbar, IonTitle, IonContent, IonBadge,
     IonList, IonListHeader, IonItem, IonLabel, IonItemDivider,
-    IonGrid, IonCol, IonRow,
+    IonGrid, IonCol, IonRow, IonNote,
     FeedComponent, FooterComponent
   ],
   changeDetection: ChangeDetectionStrategy.OnPush,
