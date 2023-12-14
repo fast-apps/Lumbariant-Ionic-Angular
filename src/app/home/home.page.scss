@@ -18,4 +18,26 @@ ion-toolbar {
 
   swiper-container {
     height: 100%;
+    .swipper {
+      .swiper-pagination.swiper-pagination-bullets.swiper-pagination-vertical{
+        right: var(--swiper-pagination-right,auto);
+        left: var(--swiper-pagination-left,8px);
+        top: 50%;
+        transform: translate3d(0px, -50%, 0px);
+      }
+    }
   }
+
+  .verticalClass {
+    right: var(--swiper-pagination-right,auto);
+    left: var(--swiper-pagination-left,8px);
+    top: 50%;
+    transform: translate3d(0px, -50%, 0px);
+  }
+
+  .swiper-pagination {
+    right: var(--swiper-pagination-right,auto);
+    left: var(--swiper-pagination-left,8px);
+    top: 50%;
+    transform: translate3d(0px, -50%, 0px);
+}

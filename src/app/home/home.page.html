@@ -1,16 +1,19 @@
 <ion-content>
-  <swiper-container #swiper id="swiper" direction="vertical" slides-per-view="1" scrollbar="true">
-    @for (item of this.source(); track $index) {
-      <swiper-slide>
-        
+  <ion-progress-bar [value]="$progress()"></ion-progress-bar>              
+  <swiper-container #swiper id="swiper" 
+    direction="vertical" 
+    slides-per-view="1"
+    (swiperslidechange)="onSwiperSlideChange($event)">
+    @for (item of $source(); track $index) {
+      <swiper-slide>        
         <ion-grid>
           <ion-row>
-            <ion-col size="12" sizeSm="5">
-              
+
+            <ion-col size="12" sizeSm="5">  
               <!-- Info list -->
               <ion-list>
                 <ion-list-header class="ion-text-uppercase">
-                  <ion-text color="primary">{{ item.title }} ({{ $index + 1 }}/{{ source().length }})</ion-text>
+                  <ion-text color="primary">{{ item.title }} ({{ $index + 1 }}/{{ $source().length }})</ion-text>
                 </ion-list-header>
                 <ion-item>
                   <ion-text color="medium">
@@ -18,20 +21,18 @@
                   </ion-text>
                 </ion-item>
                 <ion-item>
+                  <ion-badge color="secondary" slot="start">{{ item.sets }}</ion-badge>
                   <ion-label>
-                    <ion-text color="secondary">Series: </ion-text>
+                    <ion-text color="secondary">Series</ion-text>
                   </ion-label>
-                  <ion-badge color="secondary" slot="end">{{ item.sets }}</ion-badge>
                 </ion-item>
                 <ion-item>
+                  <ion-badge color="secondary" slot="start">{{ item.repeats }}</ion-badge>
                   <ion-label>
-                    <ion-text color="secondary"> Repeticiones:  </ion-text>
+                    <ion-text color="secondary"> Repeticiones  </ion-text>
                   </ion-label>
-                  <ion-badge color="secondary" slot="end">{{ item.repeats }}</ion-badge>
+                  <ion-note color="ligth" slot="end">{{ item.duration }}</ion-note>
                 </ion-item>
-                <!-- <ion-item>
-                  <ion-text color="medium">Excercise {{ $index + 1 }} of {{ source().length }} -  Media ({{ item.media.length }} pics)</ion-text>
-                </ion-item> -->
               </ion-list>
             </ion-col>
              
@@ -40,8 +41,8 @@
               <ion-list>
                 <swiper-container #swipermedia class="media" id="swipermedia" 
                   direction="horizontal" 
-                  scrollbar="true"
-                  slides-per-view="1">
+                  slides-per-view="1"
+                  pagination="true">
                   @for (img of item.media; track $index) {
                     <swiper-slide>
                       <img [src]="img" />
@@ -50,6 +51,7 @@
                 </swiper-container>
               </ion-list>
             </ion-col>
+
           </ion-row>
         </ion-grid>
       
@@ -58,10 +60,14 @@
           [likes]="item.likes" 
           [dislikes]="item.dislikes" 
           [comments]="item.comments"
-          [favorite]="item.favorite"></app-feed>
+          [favorite]="item.favorite">
+        </app-feed>
 
         <!-- slide bottom fotter-->
-        <app-footer marquee="Led Zeppelin: The song remains the same"></app-footer>
+        <app-footer 
+          marquee="Led Zeppelin: The song remains the same">
+        </app-footer>
+
       </swiper-slide>
     }
   </swiper-container>
