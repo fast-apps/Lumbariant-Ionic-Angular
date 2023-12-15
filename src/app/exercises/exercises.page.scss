@@ -1,0 +1,21 @@
+ion-toolbar {
+    --background: transparent;
+    --ion-color-base: transparent !important;
+    position: absolute;
+  }
+
+  ion-title {
+    color: #e9dfdf73;
+
+  }
+
+  ion-content {
+    ion-title {
+      position: absolute;
+      top: 0;
+    }
+  }
+
+  swiper-container {
+    height: 100%;
+  }
